@@ -1,0 +1,108 @@
+body {
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+}
+
+.head {
+    margin-top: -220px;
+    background-image: url(../imej/Group\ 1@2x.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+section {
+    margin: 70px 0px;
+}
+
+.head {}
+
+.body {
+    background-size: cover;
+    background-position: center;
+    background-image: url(../imej/Group\ 2@2x.png);
+    height: 100vh;
+}
+
+.body h1 {
+    margin-top: 70px;
+    font-weight: 700;
+}
+
+.isiBody {
+    width: 100%;
+    padding: 20px 30px;
+    background: rgba(145, 142, 142, .7);
+    -webkit-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 992px) {
+
+    nav {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .navbar {
+        background: none;
+    }
+
+    .nav-item.active {
+        font-weight: 800;
+    }
+
+
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid white;
+        width: 60%;
+        margin: auto;
+    }
+
+    .navbar-nav li {
+        margin: 0px 30px;
+    }
+
+    section {
+        margin: 100px 0px;
+    }
+
+    .head {
+        margin-top: -95px;
+        height: 100vh;
+        background-image: url(../imej/Group\ 1@2x.png);
+        background-size: cover;
+    }
+
+    .body {
+        background-size: cover;
+        background-image: url(../imej/Group\ 2@2x.png);
+        height: 100vh;
+    }
+
+
+    .body h1 {
+        margin-top: 70px;
+        font-weight: 700;
+    }
+
+    .isiBody {
+        font-size: 1.1rem;
+        padding: 20px 30px;
+        background: rgba(145, 142, 142, .7);
+        -webkit-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+        box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu {
+        height: 100vh;
+        background: url(../imej/momen.jpeg);
+        background-size: cover;
+    }
+
+}
