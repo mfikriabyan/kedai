@@ -1,6 +1,21 @@
+html {
+    scroll-behavior: smooth;
+
+}
+
 body {
     position: relative;
     font-family: 'Nunito', sans-serif;
+}
+
+.navbar-nav {
+    /* background: rgba(194, 198, 194, 0.5); */
+    align-items: flex-end;
+    padding-right: 30px;
+}
+
+section {
+    margin: 70px 0px;
 }
 
 .head {
@@ -11,31 +26,50 @@ body {
     height: 100vh;
 }
 
-section {
-    margin: 70px 0px;
+.isiHead {
+    margin-top: 250px
 }
 
-.head {}
+.isiHead h1 {
+    font-size: 5rem;
+}
 
-.body {
+
+.about {
     background-size: cover;
     background-position: center;
     background-image: url(../imej/Group\ 2@2x.png);
     height: 100vh;
 }
 
-.body h1 {
-    margin-top: 70px;
+.about h1 {
+    margin-top: 30px;
     font-weight: 700;
 }
 
-.isiBody {
+.isiAbout {
     width: 100%;
-    padding: 20px 30px;
+    padding: 10px 20px;
     background: rgba(145, 142, 142, .7);
     -webkit-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
     box-shadow: 6px 17px 18px 4px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+}
+
+.menu {
+    background: url(../imej/Mask\ Group\ 3@2x.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.menu::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
 }
 
 @media (min-width: 992px) {
@@ -53,7 +87,11 @@ section {
         font-weight: 800;
     }
 
-
+    .navbar-nav {
+        margin-left: none;
+        background: none;
+        padding-right: none;
+    }
 
     .nav-link:hover::after {
         content: '';
@@ -78,19 +116,27 @@ section {
         background-size: cover;
     }
 
-    .body {
+    .isiHead {
+        margin-top: 180px
+    }
+
+    .isiHead h1 {
+        font-size: 5rem;
+    }
+
+    .about {
         background-size: cover;
         background-image: url(../imej/Group\ 2@2x.png);
         height: 100vh;
     }
 
 
-    .body h1 {
+    .about h1 {
         margin-top: 70px;
         font-weight: 700;
     }
 
-    .isiBody {
+    .isiAbout {
         font-size: 1.1rem;
         padding: 20px 30px;
         background: rgba(145, 142, 142, .7);
