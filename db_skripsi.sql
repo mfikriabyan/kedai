@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.0-alpha1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 26, 2022 at 12:21 PM
--- Server version: 5.7.24
--- PHP Version: 7.2.19
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 19 Mar 2024 pada 13.33
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,16 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_keluar`
+-- Struktur dari tabel `barang_keluar`
 --
 
 CREATE TABLE `barang_keluar` (
   `id_barang_keluar` int(11) NOT NULL,
   `tgl_keluar` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `barang_keluar`
+-- Dumping data untuk tabel `barang_keluar`
 --
 
 INSERT INTO `barang_keluar` (`id_barang_keluar`, `tgl_keluar`) VALUES
@@ -45,7 +44,7 @@ INSERT INTO `barang_keluar` (`id_barang_keluar`, `tgl_keluar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_masuk`
+-- Struktur dari tabel `barang_masuk`
 --
 
 CREATE TABLE `barang_masuk` (
@@ -53,16 +52,16 @@ CREATE TABLE `barang_masuk` (
   `suplier_id` int(11) NOT NULL,
   `total_harga` int(11) NOT NULL,
   `tgl_masuk` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `barang_masuk`
+-- Dumping data untuk tabel `barang_masuk`
 --
 
 INSERT INTO `barang_masuk` (`id_barang_masuk`, `suplier_id`, `total_harga`, `tgl_masuk`) VALUES
 (12, 2, 175000, '2022-06-17'),
 (13, 1, 39100000, '2022-06-02'),
-(14, 2, 2240000, '2022-06-22'),
+(14, 2, 2240000, '2022-02-22'),
 (15, 2, 954000, '2022-06-01'),
 (16, 2, 9000, '2020-02-03'),
 (17, 2, 9000, '2022-07-09'),
@@ -73,7 +72,7 @@ INSERT INTO `barang_masuk` (`id_barang_masuk`, `suplier_id`, `total_harga`, `tgl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_barang_keluar`
+-- Struktur dari tabel `detail_barang_keluar`
 --
 
 CREATE TABLE `detail_barang_keluar` (
@@ -81,10 +80,10 @@ CREATE TABLE `detail_barang_keluar` (
   `barang_keluar_id` int(11) NOT NULL,
   `barang_id` int(11) NOT NULL,
   `jumlah_keluar` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `detail_barang_keluar`
+-- Dumping data untuk tabel `detail_barang_keluar`
 --
 
 INSERT INTO `detail_barang_keluar` (`id_detail_barang_keluar`, `barang_keluar_id`, `barang_id`, `jumlah_keluar`) VALUES
@@ -96,7 +95,7 @@ INSERT INTO `detail_barang_keluar` (`id_detail_barang_keluar`, `barang_keluar_id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_barang_masuk`
+-- Struktur dari tabel `detail_barang_masuk`
 --
 
 CREATE TABLE `detail_barang_masuk` (
@@ -105,10 +104,10 @@ CREATE TABLE `detail_barang_masuk` (
   `barang_id` int(11) NOT NULL,
   `jumlah_masuk` int(255) NOT NULL,
   `harga_satuan` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `detail_barang_masuk`
+-- Dumping data untuk tabel `detail_barang_masuk`
 --
 
 INSERT INTO `detail_barang_masuk` (`id_detail_barang_masuk`, `barang_masuk_id`, `barang_id`, `jumlah_masuk`, `harga_satuan`) VALUES
@@ -127,7 +126,7 @@ INSERT INTO `detail_barang_masuk` (`id_detail_barang_masuk`, `barang_masuk_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_transaksi`
+-- Struktur dari tabel `detail_transaksi`
 --
 
 CREATE TABLE `detail_transaksi` (
@@ -136,10 +135,10 @@ CREATE TABLE `detail_transaksi` (
   `transaksi_id` int(11) NOT NULL,
   `harga_menu` double NOT NULL,
   `jumlah_pesanan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `detail_transaksi`
+-- Dumping data untuk tabel `detail_transaksi`
 --
 
 INSERT INTO `detail_transaksi` (`id_detail_transaksi`, `menu_id`, `transaksi_id`, `harga_menu`, `jumlah_pesanan`) VALUES
@@ -168,7 +167,7 @@ INSERT INTO `detail_transaksi` (`id_detail_transaksi`, `menu_id`, `transaksi_id`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `karyawan`
+-- Struktur dari tabel `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -180,10 +179,10 @@ CREATE TABLE `karyawan` (
   `tahun_masuk` varchar(255) NOT NULL,
   `jabatan` varchar(50) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `karyawan`
+-- Dumping data untuk tabel `karyawan`
 --
 
 INSERT INTO `karyawan` (`id_karyawan`, `namak`, `jk`, `tgl_lahir`, `nohp`, `tahun_masuk`, `jabatan`, `user_id`) VALUES
@@ -197,16 +196,16 @@ INSERT INTO `karyawan` (`id_karyawan`, `namak`, `jk`, `tgl_lahir`, `nohp`, `tahu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -218,33 +217,34 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
   `id_menu` int(11) NOT NULL,
   `nama_menu` varchar(255) NOT NULL,
   `harga` double NOT NULL,
+  `harga_modal` double NOT NULL,
   `kategori_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `menu`
+-- Dumping data untuk tabel `menu`
 --
 
-INSERT INTO `menu` (`id_menu`, `nama_menu`, `harga`, `kategori_id`) VALUES
-(1, 'Kopi Susu', 15000, 1),
-(3, 'Pizza', 90000, 3),
-(4, 'Coklat Latte', 15000, 2),
-(11, 'Kopi Susu Vanilla', 18000, 4),
-(12, 'Kopi Susu Vanilla', 18000, 1),
-(13, 'Kopi Susu Caramel', 18000, 1),
-(14, 'Kacang Begula', 12000, 4);
+INSERT INTO `menu` (`id_menu`, `nama_menu`, `harga`, `harga_modal`, `kategori_id`) VALUES
+(1, 'Kopi Susu', 15000, 0, 1),
+(3, 'Pizza', 90000, 0, 3),
+(4, 'Coklat Latte', 15000, 0, 2),
+(11, 'Kopi Susu Vanilla', 18000, 0, 4),
+(12, 'Kopi Susu Vanilla', 18000, 0, 1),
+(13, 'Kopi Susu Caramel', 18000, 0, 1),
+(14, 'Kacang Begula', 12000, 0, 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -252,10 +252,10 @@ CREATE TABLE `pelanggan` (
   `nama` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nohp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `email`, `nohp`) VALUES
@@ -266,18 +266,18 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `email`, `nohp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Struktur dari tabel `role`
 --
 
 CREATE TABLE `role` (
   `id_role` int(11) NOT NULL,
   `nama_jabatan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `suplier`
+-- Struktur dari tabel `suplier`
 --
 
 CREATE TABLE `suplier` (
@@ -286,10 +286,10 @@ CREATE TABLE `suplier` (
   `nohp` varchar(20) NOT NULL,
   `note` varchar(255) NOT NULL,
   `tgl_terakhir_masuk` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `suplier`
+-- Dumping data untuk tabel `suplier`
 --
 
 INSERT INTO `suplier` (`id_suplier`, `nama_suplier`, `nohp`, `note`, `tgl_terakhir_masuk`) VALUES
@@ -299,7 +299,7 @@ INSERT INTO `suplier` (`id_suplier`, `nama_suplier`, `nohp`, `note`, `tgl_terakh
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_barang`
+-- Struktur dari tabel `tb_barang`
 --
 
 CREATE TABLE `tb_barang` (
@@ -311,10 +311,10 @@ CREATE TABLE `tb_barang` (
   `harga` double NOT NULL,
   `expired` date NOT NULL,
   `tgl_terakhir_masuk` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_barang`
+-- Dumping data untuk tabel `tb_barang`
 --
 
 INSERT INTO `tb_barang` (`id_barang`, `kode_barang`, `nama_barang`, `jumlah_tersedia`, `merk`, `harga`, `expired`, `tgl_terakhir_masuk`) VALUES
@@ -326,7 +326,7 @@ INSERT INTO `tb_barang` (`id_barang`, `kode_barang`, `nama_barang`, `jumlah_ters
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pegawai`
+-- Struktur dari tabel `tb_pegawai`
 --
 
 CREATE TABLE `tb_pegawai` (
@@ -335,10 +335,10 @@ CREATE TABLE `tb_pegawai` (
   `jk` varchar(191) NOT NULL,
   `jabatan` varchar(191) NOT NULL,
   `barang_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_pegawai`
+-- Dumping data untuk tabel `tb_pegawai`
 --
 
 INSERT INTO `tb_pegawai` (`id_pegawai`, `nama`, `jk`, `jabatan`, `barang_id`) VALUES
@@ -347,7 +347,7 @@ INSERT INTO `tb_pegawai` (`id_pegawai`, `nama`, `jk`, `jabatan`, `barang_id`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -355,10 +355,10 @@ CREATE TABLE `tb_user` (
   `username` varchar(191) NOT NULL,
   `password` varchar(191) NOT NULL,
   `role` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `role`) VALUES
@@ -374,7 +374,7 @@ INSERT INTO `tb_user` (`id_user`, `username`, `password`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -384,10 +384,10 @@ CREATE TABLE `transaksi` (
   `metode_pembayaran` varchar(255) NOT NULL,
   `karyawan_id` int(11) NOT NULL,
   `total_belanja` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `pelanggan_id`, `jam_transaksi`, `metode_pembayaran`, `karyawan_id`, `total_belanja`) VALUES
@@ -409,180 +409,180 @@ INSERT INTO `transaksi` (`id_transaksi`, `pelanggan_id`, `jam_transaksi`, `metod
 --
 
 --
--- Indexes for table `barang_keluar`
+-- Indeks untuk tabel `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   ADD PRIMARY KEY (`id_barang_keluar`);
 
 --
--- Indexes for table `barang_masuk`
+-- Indeks untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   ADD PRIMARY KEY (`id_barang_masuk`);
 
 --
--- Indexes for table `detail_barang_keluar`
+-- Indeks untuk tabel `detail_barang_keluar`
 --
 ALTER TABLE `detail_barang_keluar`
   ADD PRIMARY KEY (`id_detail_barang_keluar`);
 
 --
--- Indexes for table `detail_barang_masuk`
+-- Indeks untuk tabel `detail_barang_masuk`
 --
 ALTER TABLE `detail_barang_masuk`
   ADD PRIMARY KEY (`id_detail_barang_masuk`),
   ADD UNIQUE KEY `barang_masuk_id` (`barang_masuk_id`,`barang_id`,`jumlah_masuk`);
 
 --
--- Indexes for table `detail_transaksi`
+-- Indeks untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail_transaksi`);
 
 --
--- Indexes for table `karyawan`
+-- Indeks untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`id_karyawan`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indexes for table `role`
+-- Indeks untuk tabel `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id_role`);
 
 --
--- Indexes for table `suplier`
+-- Indeks untuk tabel `suplier`
 --
 ALTER TABLE `suplier`
   ADD PRIMARY KEY (`id_suplier`);
 
 --
--- Indexes for table `tb_barang`
+-- Indeks untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indexes for table `tb_pegawai`
+-- Indeks untuk tabel `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
   ADD PRIMARY KEY (`id_pegawai`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang_keluar`
+-- AUTO_INCREMENT untuk tabel `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   MODIFY `id_barang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `barang_masuk`
+-- AUTO_INCREMENT untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   MODIFY `id_barang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `detail_barang_keluar`
+-- AUTO_INCREMENT untuk tabel `detail_barang_keluar`
 --
 ALTER TABLE `detail_barang_keluar`
   MODIFY `id_detail_barang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `detail_barang_masuk`
+-- AUTO_INCREMENT untuk tabel `detail_barang_masuk`
 --
 ALTER TABLE `detail_barang_masuk`
   MODIFY `id_detail_barang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT for table `detail_transaksi`
+-- AUTO_INCREMENT untuk tabel `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   MODIFY `id_detail_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `karyawan`
+-- AUTO_INCREMENT untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
   MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `pelanggan`
+-- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `suplier`
+-- AUTO_INCREMENT untuk tabel `suplier`
 --
 ALTER TABLE `suplier`
   MODIFY `id_suplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tb_barang`
+-- AUTO_INCREMENT untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tb_pegawai`
+-- AUTO_INCREMENT untuk tabel `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
   MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
@@ -591,4 +591,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
